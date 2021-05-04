@@ -12,7 +12,31 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     background-color: rgba(0, 0, 0, 0.9);
+    transition: 0.5s;
+}
+
+.toggle {
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 80px;
+    height: 40px;
+    background: grey;
+    border-radius: 25px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.fa-sun {
+    color: yellow;
+    font-size: 2rem;
+}
+
+.active {
+    justify-content: flex-start;
 }
 
 .wrap {
@@ -25,8 +49,8 @@ body {
     border-radius: 35px;
     background-color: black;
     position: relative;
+    transition: 0.5s;
 }
-
 
 .wrap::before {
     content: '';
@@ -38,6 +62,15 @@ body {
     height: 5px;
     border-radius: 3px;
     background-color: black;
+}
+
+.active1 {
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: inset -3px -3px 7px rgba(0, 0, 0, 0.9), inset 3px 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.active2 {
+    color: orangered;
 }
 
 .form {
@@ -122,8 +155,8 @@ input {
 
 @media(max-width:370px) {
     .wrap {
-        width: 250px;
-        height: 500px;
+        width: 270px;
+        height: 540px;
     }
 
     input[type='button'] {
@@ -137,5 +170,11 @@ input {
 
     .wrap::before {
         bottom: 15px;
+    }
+
+    .toggle {
+        position: static;
+        top: 10px;
+        margin: 5px;
     }
 }
